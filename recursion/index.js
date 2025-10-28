@@ -8,3 +8,9 @@ function fibs(num) {
 
   return sum
 }
+
+function fibsRec(num) {
+  if (num <= 1) return num;
+  return fibsRec(num - 1) + fibsRec(num - 2)
+}
+
