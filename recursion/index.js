@@ -20,7 +20,7 @@ function mergeSort(arr) {
   }
 
   let left = arr; 
-  let right = arr.splice(arr.length / 2);
+  let right = arr.slice(arr.length / 2);
 
   left = mergeSort(left)
   right = mergeSort(right)
@@ -51,10 +51,3 @@ function mergeSort(arr) {
   }
   return copy
 }
-
-console.log(mergeSort([38, 27, 43, 10]))
-console.log(mergeSort([73]))
-console.log(mergeSort([1, 2, 3, 4, 5]))
-console.log(mergeSort([3, 2, 1, 13, 8, 5, 0, 1]));
-console.log(mergeSort([105, 79, 100, 110]));
-
