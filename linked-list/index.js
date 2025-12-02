@@ -9,4 +9,4 @@ list.prepend('LMAO!')
 
 console.log(list)
 console.log(`Size: ${list.size()}`)
-console.log(list.head())
+console.log(list.tail())

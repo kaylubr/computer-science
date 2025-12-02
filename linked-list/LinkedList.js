@@ -47,6 +47,18 @@ class LinkedList {
   head() {
     return this.#head
   }
+
+  tail() {
+    if (this.#head.nextNode === null) {
+      const tail = this.#head
+      this.#head = this.node
+      return tail
+    }
+
+    this.#head = this.#head.nextNode
+
+    return this.tail()
+  }
 }
 
 export default LinkedList
