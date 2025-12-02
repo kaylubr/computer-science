@@ -25,6 +25,22 @@ class LinkedList {
     this.node.nextNode = temp
     this.head = this.node
   }
+
+  size() {
+    if (!this.node) {
+      return 0
+    }
+
+    let num = 1
+    if (this.head.nextNode === null) {
+      this.head = this.node
+      return 1
+    }
+
+    this.head = this.head.nextNode
+
+    return num + this.size()
+  }
 }
 
 export default LinkedList
