@@ -15,7 +15,14 @@ class LinkedList {
       this.head = this.head.nextNode
       this.append(value)
     }
-    
+
+    this.head = this.node
+  }
+
+  prepend(value) {
+    const temp = this.node
+    this.node = new Node(value)
+    this.node.nextNode = temp
     this.head = this.node
   }
 }
