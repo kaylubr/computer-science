@@ -81,6 +81,22 @@ class LinkedList {
     this.#head = this.#head.nextNode
     this.pop()
   }
+
+  contains(value) {
+    if (this.#head.value !== value && this.#head.nextNode === null) {
+      this.#head = this.node
+      return false
+    }
+
+    if (this.#head.value === value) {
+      this.#head = this.node
+      return true
+    }
+
+    this.#head = this.#head.nextNode
+
+    return true && this.contains(value)
+  }
 }
 
 export default LinkedList
