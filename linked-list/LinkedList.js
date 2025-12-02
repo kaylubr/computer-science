@@ -75,6 +75,7 @@ class LinkedList {
   pop() {
     if (this.#head.nextNode.nextNode === null) {
       this.#head.nextNode = null
+      this.#head = this.node
       return
     }
 
@@ -101,12 +102,30 @@ class LinkedList {
     let index = 0
     while (this.#head) {
       if (this.#head.value === value) {
+        this.#head = this.node
         return index
       }
       this.#head = this.#head.nextNode
       index += 1
     }
+
+    this.#head = this.node
     return null
+  }
+
+  toString() {
+    let current = this.#head
+    let output = ''
+    while (true) {
+      if (current.nextNode === null) {
+        output += `( ${current.value} ) -> null`
+        break
+      }
+      output += `( ${current.value} ) -> `
+      current = current.nextNode
+    }
+
+    return output
   }
 }
 

@@ -7,7 +7,7 @@ list.append('boy')
 list.append('cow')
 list.prepend('LMAO!')
 
-console.log(list.find('LMAO!'));
+console.log(list.toString());
 
 
 
