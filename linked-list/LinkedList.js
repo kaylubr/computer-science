@@ -94,8 +94,19 @@ class LinkedList {
     }
 
     this.#head = this.#head.nextNode
-
     return true && this.contains(value)
+  }
+
+  find(value) {
+    let index = 0
+    while (this.#head) {
+      if (this.#head.value === value) {
+        return index
+      }
+      this.#head = this.#head.nextNode
+      index += 1
+    }
+    return null
   }
 }
 
