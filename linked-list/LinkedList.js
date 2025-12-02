@@ -40,7 +40,6 @@ class LinkedList {
     }
 
     this.#head = this.#head.nextNode
-
     return num + this.size()
   }
 
@@ -56,7 +55,6 @@ class LinkedList {
     }
 
     this.#head = this.#head.nextNode
-
     return this.tail()
   }
 
@@ -72,6 +70,16 @@ class LinkedList {
     const node = this.#head
     this.#head = this.node
     return node
+  }
+
+  pop() {
+    if (this.#head.nextNode.nextNode === null) {
+      this.#head.nextNode = null
+      return
+    }
+
+    this.#head = this.#head.nextNode
+    this.pop()
   }
 }
 
