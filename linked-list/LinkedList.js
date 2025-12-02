@@ -59,6 +59,20 @@ class LinkedList {
 
     return this.tail()
   }
+
+  at(index) {
+    if ((index + 1) > this.size() || index < 0) {
+      throw new Error('Index out of bounds')
+    }
+
+    for (let i = 0; i < index; i++) {
+      this.#head = this.#head.nextNode
+    }
+
+    const node = this.#head
+    this.#head = this.node
+    return node
+  }
 }
 
 export default LinkedList

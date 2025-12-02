@@ -7,6 +7,5 @@ list.append('boy')
 list.append('cow')
 list.prepend('LMAO!')
 
-console.log(list)
-console.log(`Size: ${list.size()}`)
-console.log(list.tail())
+
+
